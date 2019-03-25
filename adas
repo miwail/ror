@@ -1,0 +1,26 @@
+
+[1mFrom:[0m /var/lib/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/attribute_methods.rb @ line 271 ActiveRecord::AttributeMethods#respond_to?:
+
+    [1;34m270[0m: [32mdef[0m [1;34mrespond_to?[0m(name, include_private = [1;36mfalse[0m)
+ => [1;34m271[0m:   [32mreturn[0m [1;36mfalse[0m [32munless[0m [32msuper[0m
+    [1;34m272[0m: 
+    [1;34m273[0m:   [32mcase[0m name
+    [1;34m274[0m:   [32mwhen[0m [33m:to_partial_path[0m
+    [1;34m275[0m:     name = [31m[1;31m"[0m[31mto_partial_path[1;31m"[0m[31m[0m.freeze
+    [1;34m276[0m:   [32mwhen[0m [33m:to_model[0m
+    [1;34m277[0m:     name = [31m[1;31m"[0m[31mto_model[1;31m"[0m[31m[0m.freeze
+    [1;34m278[0m:   [32melse[0m
+    [1;34m279[0m:     name = name.to_s
+    [1;34m280[0m:   [32mend[0m
+    [1;34m281[0m: 
+    [1;34m282[0m:   [1;34m# If the result is true then check for the select case.[0m
+    [1;34m283[0m:   [1;34m# For queries selecting a subset of columns, return false for unselected columns.[0m
+    [1;34m284[0m:   [1;34m# We check defined?(@attributes) not to issue warnings if called on objects that[0m
+    [1;34m285[0m:   [1;34m# have been allocated but not yet initialized.[0m
+    [1;34m286[0m:   [32mif[0m [32mdefined?[0m(@attributes) && [1;36mself[0m.class.column_names.include?(name)
+    [1;34m287[0m:     [32mreturn[0m has_attribute?(name)
+    [1;34m288[0m:   [32mend[0m
+    [1;34m289[0m: 
+    [1;34m290[0m:   [1;36mtrue[0m
+    [1;34m291[0m: [32mend[0m
+

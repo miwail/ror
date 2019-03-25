@@ -1,0 +1,13 @@
+<h2 align='center'>User profiles #<%=@user.name%></h2>
+<table align = 'center'>
+  <th>ID</th>
+  <th>Name</th>
+  <th>Email</th>
+  <th>Task</th>
+    <tr>
+      <td><%=@user.id%></td>
+      <td><%=@user.name%></td>
+      <td><%=@user.email%></td>
+      <td><%=@user.tasks.name%></td>
+    </tr>
+</table>

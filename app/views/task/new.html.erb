@@ -1,0 +1,14 @@
+<table align='center'>
+  <tr>
+    <td>
+  <%=form_with model: @task, url: {action: "new"} do |f|%>
+    <p><%=f.text_field :name%></p>
+    <p><%=f.text_field :description%></p>
+    <p><%=f.time_field :start_time%></p>
+    <p><%=f.time_field :end_time%></p>
+    <p><%=f.submit "Add task" %></p>
+
+<%end%>
+</td>
+</tr>
+</table>

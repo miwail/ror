@@ -1,0 +1,10 @@
+<table align = 'center'>
+    <%@users.each do |f|%>
+      <tr>
+        <td><%=link_to f.name, user_path(f.id) %></td>
+        <td><%=f.email%></td>
+        <td><%= link_to "Delete", user_path(f), :method => :delete, data: {confirm:"Are you sure?"} %></td>
+      </tr>
+      <%end%>
+
+</table>

@@ -1,0 +1,18 @@
+    <h2 align='center'>Task id #<%=@task.id%></h2>
+    <table align = 'center'>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Start at</th>
+      <th>End at</th>
+      <th>User</th>
+        <tr>
+          <td><%=@task.id%></td>
+          <td><%=@task.name%></td>
+          <td><%=@task.description%></td>
+          <td><%=@task.start_time%></td>
+          <td><%=@task.end_time%></td>
+          <td><%=link_to @task.user.name, user_path(@task.user.id)%></td>
+        </tr>
+
+    </table>

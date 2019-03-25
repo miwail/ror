@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      <header>
+        <h2 align='center'><%=link_to "Task list by Zol", root_path%></h2>
+      </header>
+      <input type="checkbox" id="nav-toggle" hidden>
+      <nav class="nav">
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+        <ul>
+          <li><%=link_to "Home", root_path%></li>
+          <li><%=link_to "Add new task", new_task_path%></li>
+          <li><%=link_to "Sign Up", new_user_path%></li>
+          <li><%=link_to "Profile", current_user%></li>
+          <li>Sign in</li>
+        </ul>
+
+      </nav>
+      <%= yield %>
+      <footer>
+        <div class="footer">
+          <i>Zol,</i>
+          <i><%=Date.today.year%></i>
+        </div>
+      </footer>
+  </body>
+</html>
